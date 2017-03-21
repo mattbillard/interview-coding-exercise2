@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
+    <link href="styles.less" rel="stylesheet/less" type="text/css" />
+</head>
+<body ng-controller="namesCtrl as vm">
+
+    <div class="container">
+        <form ng-submit="vm.add(vm.toAdd);">
+            <div class="input-group">
+                <input type="text" class="form-control" id="toAdd" placeholder="Add a name" ng-model="vm.toAdd" autofocus>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">Add</button>
+                </span>
+            </div>
+        </form>
+
+        <br>
+        <br>
+        
+        <div class="row">
+            <name-tag ng-repeat="name in vm.NamesService.names" id="$index" name="name"></name-tag>
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>    
+    <script src="bower_components/angular/angular.min.js"></script>    
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>    
+    <script src="bower_components/less/dist/less.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
