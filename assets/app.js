@@ -17,7 +17,7 @@ app.controller('namesCtrl', function ($scope, NamesService) {
 
 app.service('NamesService', function ($http) {
     var self = this;
-    var url = 'api/names';
+    var url = 'api/names.json';
     this.names = [];
 
     function init() {
@@ -41,6 +41,32 @@ app.service('NamesService', function ($http) {
 });
 
 
+// app.directive('nameTag', function() {
+//     return {
+//         scope: {
+//             id: '=',
+//             name: '='
+//         },
+//         template: `
+//             <div class="name-tag-top">
+//                 <div class="name-tag-title">HELLO</div>
+//                 <div>MY NAME IS</div>
+//             </div>
+//             <div class="name-tag-bottom">
+//                 <h1>{{name}}</h1>
+//                 <a ng-click="vm.delete(id);">Delete</a>
+//             </div>
+//         `,
+//         controllerAs: 'vm',
+//         controller: function (NamesService) {
+//             this.delete = function (id) {
+//                 NamesService.delete(id);
+//             }
+//         }
+//     }
+// });
+
+
 app.component('nameTag', {
     bindings: {
         id: '=',
@@ -57,7 +83,7 @@ app.component('nameTag', {
         </div>
     `,
     controller: function (NamesService) {
-        this.delete = function(id) {
+        this.delete = function (id) {
             NamesService.delete(id);
         }
     }
