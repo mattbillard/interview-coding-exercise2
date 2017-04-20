@@ -10,4 +10,4 @@ Open Chrome to http://localhost:8080
 
 
 ## Interviewee Instructions
-TODO@Sina - Write instructions to build up the solution. 
+TODO - Write instructions to build up the solution. 
