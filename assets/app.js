@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('myApp', []);
+var app = angular.module('app', []);
 
 
 app.controller('namesCtrl', function ($scope, NamesService) {
@@ -17,7 +17,7 @@ app.controller('namesCtrl', function ($scope, NamesService) {
 
 app.service('NamesService', function ($http) {
     var self = this;
-    var url = 'api/names.json';
+    var url = 'data/names.json';
     this.names = [];
 
     function init() {
